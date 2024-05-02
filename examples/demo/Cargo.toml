@@ -26,7 +26,7 @@ leptix_primitives = { git = "https://github.com/leptix/leptix/", package = "lept
 lepton = { path = "../../core" }
 
 [features]
-hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]
+hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate", "leptix_primitives/hydrate"]
 ssr = [
     "dep:axum",
     "dep:tokio",
@@ -37,6 +37,7 @@ ssr = [
     "leptos_meta/ssr",
     "leptos_router/ssr",
     "dep:tracing",
+    "leptix_primitives/ssr"
 ]
 
 # Defines a size-optimized profile for the WASM bundle in release mode

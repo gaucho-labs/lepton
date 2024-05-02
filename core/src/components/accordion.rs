@@ -72,19 +72,20 @@ pub fn AccordionTrigger(
 #[component]
 pub fn AccordionContent(
     #[prop(optional, into)] class: MaybeSignal<String>,
-    #[prop(attrs)] attrs: Attributes,
+    #[prop(attrs)] mut attrs: Attributes,
     children: ChildrenFn,
 ) -> impl IntoView {
     use accordion::AccordionContent as BaseAccordionContent;
 
     let class = create_memo(move |_| tw_merge!("pb-4 pt-0", class.get()));
 
+    merge_class_attribute(&mut attrs, "overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down", "".into());
+
     view! {
         <BaseAccordionContent
             attrs=attrs
-            attr:class="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
         >
-            <div attr:class=class>{children()}</div>
+            <div class=class>{children()}</div>
         </BaseAccordionContent>
     }
 }

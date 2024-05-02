@@ -66,7 +66,7 @@ pub fn extract_class_from_attributes(attrs: &mut Attributes) -> ClassAttributeEn
                             Attribute::String(s) | Attribute::Option(Some(s)) => s,
                             Attribute::Bool(_) => "".into(),
                             Attribute::Option(None) => "".into(),
-                            Attribute::Fn(_) => unreachable!(),
+                            Attribute::Fn(_) => unreachable!("Fn should be unwrapped above."),
                         }
                     });
                     ClassAttributeEntry::Exists {

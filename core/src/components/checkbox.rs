@@ -1,5 +1,6 @@
 use leptix_primitives::{
-    components::checkbox::{CheckboxIndicator, CheckboxRoot, CheckboxRootProps, CheckedState},
+    components::checkbox,
+    components::checkbox::{CheckboxIndicator, CheckboxRoot, CheckboxRootProps},
     Attributes,
 };
 use leptos::{
@@ -10,8 +11,10 @@ use leptos::{
 
 use crate::utils::merge_class_attribute;
 
+pub use checkbox::CheckedState;
+
 #[component]
-pub fn CheckBox(
+pub fn Checkbox(
     #[prop(optional)] as_child: Option<bool>,
     #[prop(optional)] required: Option<MaybeSignal<bool>>,
     #[prop(optional)] disabled: Option<MaybeSignal<bool>>,
@@ -24,6 +27,7 @@ pub fn CheckBox(
     #[prop(attrs)] mut attrs: Attributes,
     #[prop(optional)] node_ref: NodeRef<AnyElement>,
 ) -> impl IntoView {
+    // TODO: Fix panic in browser.
     let indicator = Box::new(move || {
         view! {
             <CheckboxIndicator attr:class="flex items-center justify-center text-current">

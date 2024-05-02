@@ -29,7 +29,7 @@ pub fn App() -> impl IntoView {
     }
 }
 
-use lepton::components::{accordion::*, badge::*, button::*};
+use lepton::components::{accordion::*, badge::*, button::*, card::*, checkbox::*};
 
 /// Renders the home page of your application.
 #[component]
@@ -58,7 +58,7 @@ fn HomePage() -> impl IntoView {
                         value: None,
                         default_value: None,
                         on_value_change: None,
-                        collapsible: None,
+                        collapsible: Some(true.into()),
                     }
                     attr:class="w-full"
                 >
@@ -71,8 +71,8 @@ fn HomePage() -> impl IntoView {
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Is it styled?</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It comes with default styles that matches the other
-                            components&apos; aesthetic.
+                            "Yes. It comes with default styles that matches the other
+                            components' aesthetic."
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
@@ -82,6 +82,28 @@ fn HomePage() -> impl IntoView {
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
+            </Section>
+
+            <Section title="Checkbox">
+                    <div></div>
+                // <Checkbox
+                //     default_checked=CheckedState::Checked(true).into()
+                // ></Checkbox>
+            </Section>
+
+            <Section title="Card">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Card Title</CardTitle>
+                        <CardDescription>Card Description</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <p>Card Content</p>
+                    </CardContent>
+                    <CardFooter>
+                        <p>Card Footer</p>
+                    </CardFooter>
+                </Card>
             </Section>
 
         </div>
