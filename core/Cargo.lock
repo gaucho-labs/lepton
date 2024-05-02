@@ -608,7 +608,7 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 [[package]]
 name = "leptix_primitives"
 version = "0.1.0"
-source = "git+https://github.com/leptix/leptix/#e281897115be80b1a3e848626e884d347b1d1631"
+source = "git+https://github.com/leptix/leptix/?branch=remove_nightly#da171cabc751430704b829e51c65e4e50e2536ce"
 dependencies = [
  "derive_more",
  "itertools",

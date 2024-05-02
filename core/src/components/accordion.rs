@@ -4,6 +4,9 @@ use tailwind_fuse::*;
 
 use crate::utils::merge_class_attribute;
 
+pub use accordion::AccordionKind;
+pub use accordion::AccordionRoot as Accordion;
+
 #[component]
 pub fn AccordionItem(
     #[prop(optional)] disabled: Option<MaybeSignal<bool>>,

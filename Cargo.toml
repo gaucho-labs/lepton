@@ -1,11 +1,11 @@
-[package]
-name = "lepton"
-version = "0.1.0"
+[workspace]
+resolver = "2"
+members = ["core"]
+exclude = ["examples"]
+
+[workspace.package]
+authors = ["Nico Burniske"]
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-tailwind_fuse = { version = "0.3.0", features = ["variant"] }
-leptix_primitives = { git = "https://github.com/leptix/leptix/", package = "leptix_primitives", branch = "remove_nightly" }
-leptos = { version = "0.6" } 
+license = "MIT"
+repository = "https://github.com/gaucho-labs/lepton"
+version = "0.1.0"
